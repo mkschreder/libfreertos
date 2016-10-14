@@ -1,0 +1,10 @@
+prefix=/data/software/libnaze32/staging_dir
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: libulink
+Description: Portable micro serial port stream framing library in C
+Version: 0.1.0
+Cflags: 
+Libs: -lulink
