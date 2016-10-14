@@ -128,7 +128,8 @@ am_libfreertos_arm_cm3_la_OBJECTS =  \
 	libfreertos_arm_cm3_la-list.lo libfreertos_arm_cm3_la-queue.lo \
 	libfreertos_arm_cm3_la-tasks.lo \
 	libfreertos_arm_cm3_la-timers.lo \
-	libfreertos_arm_cm3_la-portable.lo
+	libfreertos_arm_cm3_la-portable.lo \
+	libfreertos_arm_cm3_la-heap_2.lo
 libfreertos_arm_cm3_la_OBJECTS = $(am_libfreertos_arm_cm3_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -326,7 +327,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 lib_LTLIBRARIES = libfreertos_arm_cm3.la
 include_HEADERS = croutine.h event_groups.h FreeRTOS.h FreeRTOSConfig.h list.h mpu_prototypes.h mpu_wrappers.h portable.h portmacro.h projdefs.h semphr.h queue.h task.h timers.h deprecated_definitions.h port_arm_cm3.h
-libfreertos_arm_cm3_la_SOURCES = croutine.c event_groups.c list.c queue.c tasks.c timers.c portable.c
+libfreertos_arm_cm3_la_SOURCES = croutine.c event_groups.c list.c queue.c tasks.c timers.c portable.c heap_2.c
 libfreertos_arm_cm3_la_CFLAGS = $(CODE_COVERAGE_CFLAGS) -DFREERTOS_PORT_ARM_CM3 -std=gnu99 -Wall -Werror
 all: all-am
 
@@ -409,6 +410,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libfreertos_arm_cm3_la-croutine.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libfreertos_arm_cm3_la-event_groups.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libfreertos_arm_cm3_la-heap_2.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libfreertos_arm_cm3_la-list.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libfreertos_arm_cm3_la-portable.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libfreertos_arm_cm3_la-queue.Plo@am__quote@
@@ -484,6 +486,13 @@ libfreertos_arm_cm3_la-portable.lo: portable.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='portable.c' object='libfreertos_arm_cm3_la-portable.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libfreertos_arm_cm3_la_CFLAGS) $(CFLAGS) -c -o libfreertos_arm_cm3_la-portable.lo `test -f 'portable.c' || echo '$(srcdir)/'`portable.c
+
+libfreertos_arm_cm3_la-heap_2.lo: heap_2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libfreertos_arm_cm3_la_CFLAGS) $(CFLAGS) -MT libfreertos_arm_cm3_la-heap_2.lo -MD -MP -MF $(DEPDIR)/libfreertos_arm_cm3_la-heap_2.Tpo -c -o libfreertos_arm_cm3_la-heap_2.lo `test -f 'heap_2.c' || echo '$(srcdir)/'`heap_2.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libfreertos_arm_cm3_la-heap_2.Tpo $(DEPDIR)/libfreertos_arm_cm3_la-heap_2.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='heap_2.c' object='libfreertos_arm_cm3_la-heap_2.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libfreertos_arm_cm3_la_CFLAGS) $(CFLAGS) -c -o libfreertos_arm_cm3_la-heap_2.lo `test -f 'heap_2.c' || echo '$(srcdir)/'`heap_2.c
 
 mostlyclean-libtool:
 	-rm -f *.lo
